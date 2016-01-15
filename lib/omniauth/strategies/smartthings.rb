@@ -45,7 +45,6 @@ module OmniAuth
         Net::HTTP.start(uri.host, uri.port, :use_ssl => true) do |http|
           res = http.request(req)
           @raw_info = JSON.parse(res.body)
-          puts res.body
         end
         return @raw_info
       end
