@@ -36,6 +36,11 @@ module OmniAuth
         { :endpoints => raw_info }
       end
 
+      # SmartThings OAuth chokes if you use a query string in the redirect_uri:
+      def query_string
+        ""
+      end
+
       def raw_info
         return @raw_info if @raw_info
         @raw_info = {}
